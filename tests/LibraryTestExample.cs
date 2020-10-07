@@ -16,15 +16,12 @@ limitations under the License.
 */
 
 using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace csmcrc
+namespace csmcrc.tests
 {
-    public class Csmcrc
+    class LibraryTestExample
     {
-        public bool init()
-        {
-            //test
-            return true;
-        }
     }
 }

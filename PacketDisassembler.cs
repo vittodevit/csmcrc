@@ -16,15 +16,12 @@ limitations under the License.
 */
 
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace csmcrc
 {
-    public class Csmcrc
+    class PacketDisassembler
     {
-        public bool init()
-        {
-            //test
-            return true;
-        }
     }
 }

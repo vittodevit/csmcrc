@@ -16,15 +16,26 @@ limitations under the License.
 */
 
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace csmcrc
 {
-    public class Csmcrc
+    [Serializable]
+    class InvalidPayloadCsmcrcException : Exception
     {
-        public bool init()
+        public static readonly string PAYLOAD_TOO_LONG = "is too long";
+        public static readonly string PAYLOAD_ISNOT_ASCII = "contains non-ASCII characters";
+
+        public InvalidPayloadCsmcrcException()
         {
-            //test
-            return true;
+
+        }
+
+        public InvalidPayloadCsmcrcException(string m)
+            : base (String.Format("The payload {0}", m))
+        {
+
         }
     }
 }
