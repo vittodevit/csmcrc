@@ -38,4 +38,19 @@ namespace csmcrc
 
         }
     }
+
+    [Serializable]
+    class InvalidPacketCsmcrcException : Exception
+    { 
+        public InvalidPacketCsmcrcException()
+        {
+
+        }
+
+        public InvalidPacketCsmcrcException(string m)
+            : base (String.Format("Original message: {0}", m))
+        {
+
+        }
+    }
 }
