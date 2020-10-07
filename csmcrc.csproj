@@ -2,6 +2,25 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>mrBackSlash-it</Authors>
+    <Company>mrBackSlash-it</Company>
+    <Description>RCON Client for Minecraft servers implemented in C#</Description>
+    <Copyright>© 2020 Vittorio Lo Mele</Copyright>
+    <PackageLicenseFile>apache.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/mrBackSlash-it/csmcrc</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mrBackSlash-it/csmcrc</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageReleaseNotes>First C# version, also check out the java one!</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\apache.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
