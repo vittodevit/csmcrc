@@ -76,20 +76,25 @@ namespace csmcrc
             }
             //disassemble resposse
             byte[] responseId = PacketDisassembler.disassemblePacket(dataBuffer, PacketDisassembler.PACKET_S_REQUEST_ID);
+            byte[] bRequestId = BitConverter.GetBytes(requestId);
             //check login
-            if(!Array.Equals(responseId, BitConverter.GetBytes(requestId)))
+            if(responseId[0] == bRequestId[0] && responseId[1] == bRequestId[1] && responseId[2] == bRequestId[2] && responseId[3] == bRequestId[3])
+            {
+                //login ok, set variables
+                chost = host;
+                cport = port;
+                loggedIn = true;
+                //clean buffer and return
+                dataBuffer = new byte[8192];
+                return true;
+            }
+            else
             {
                 //login failed, clean buffer and return
                 dataBuffer = new byte[8192];
                 return false;
             }
-            //login ok, set variables
-            chost = host;
-            cport = port;
-            loggedIn = true;
-            //clean buffer and return
-            dataBuffer = new byte[8192];
-            return true;
+            
         }
 
         /// <summary>
