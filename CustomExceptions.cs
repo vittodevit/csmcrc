@@ -53,4 +53,34 @@ namespace csmcrc
 
         }
     }
+
+    [Serializable]
+    class UnableToConnectCsmcrcException : Exception
+    {
+        public UnableToConnectCsmcrcException()
+        {
+
+        }
+
+        public UnableToConnectCsmcrcException(string m)
+            : base(String.Format("Original message: {0}", m))
+        {
+
+        }
+    }
+
+    [Serializable]
+    class NotConnectedCsmcrcException : Exception
+    {
+        public NotConnectedCsmcrcException()
+        {
+
+        }
+
+        public NotConnectedCsmcrcException(string m)
+            : base(String.Format("Original message: {0}", m))
+        {
+
+        }
+    }
 }
