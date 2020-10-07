@@ -28,7 +28,6 @@ namespace csmcrc
     {
         //constants
         private static readonly byte[] padding = { 0x00, 0x00 };
-        const int Ansi = 255;
         public static readonly int TYPE_LOGIN = 3;
         public static readonly int TYPE_COMMAND = 2;
 
@@ -82,7 +81,7 @@ namespace csmcrc
         /// <returns>If the string contains unicode characters returns true</returns>
         private static bool isNotAscii(string s)
         {
-            return s.Any(c => c > Ansi);
+            return s.Any(c => c > 127);
         }
     }
 }
