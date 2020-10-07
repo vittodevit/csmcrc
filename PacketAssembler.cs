@@ -59,6 +59,13 @@ namespace csmcrc
             byte[] bRequestId = BitConverter.GetBytes(requestId);
             byte[] bRequestType = BitConverter.GetBytes(requestType);
             byte[] bRemainderLength = BitConverter.GetBytes(remainderLength);
+            //if the system is not little endian flip the byte array (RCON prot. is little endian)
+            if (!BitConverter.IsLittleEndian)
+            {
+                Array.Reverse(bRemainderLength);
+                Array.Reverse(bRequestId);
+                Array.Reverse(bRequestType);
+            }
             //assembling packet
             Array.Copy(bRemainderLength, 0, data, 0, 4);
             Array.Copy(bRequestId, 0, data, 4, 4);
