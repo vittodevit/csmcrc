@@ -24,5 +24,5 @@ Check out the example gist here ->  [https://gist.github.com/mrBackSlash-it/80df
 ```init(string host, int port, string password)``` Connects to the server  
 ```send(string payload)``` Sends a command   
 ```disconnect()``` closes tcp socket and disconnects from the server  
-```isConencted()``` returns connection state (boolean)
+```isConencted()``` returns connection state (boolean)   
 ```getAddress() and getPort()``` they return the address and the port of that instance
